@@ -26,7 +26,9 @@ Logic retrieves data from local storage on selected plant, adds water level, sav
 AS a user WHEN I am on the app page I am presented with information on my selected plant
 Logic retrieves and displays information on the selected plant from local storage.
 
-## Installation
+## Working with this repo
+
+### Installation
 
 1. Clone the repository to your local computer
 
@@ -56,25 +58,33 @@ Logic retrieves and displays information on the selected plant from local storag
 
    WHERE origin/mitch-updates is the remote branch AND mitch-updates is the local branch
 
-5. Git add
+### Push Updates
 
-6. Git commit
+1. Git add
 
-7. Push changes to the correct remote branch
+1. Git commit
+
+3. Push changes to the correct remote branch
    ```
    git push origin <branch-name>
    ```
 
-Example: On my local computer I use
-git push origin mitch-updates
-This will push changes to the remote mitch-updates branch
+    Example: On my local computer I use
+    git push origin mitch-updates
+    This will push changes to the remote mitch-updates branch
 
-8. Select the target branch in Github
+4. Select the target branch in Github
    ![alt text](image.png)
 
-9. Create the pull request
+5. Create the pull request
 
-10. In the dev branch create a pull request with updates from the `name-updates` branch
+6. In the dev branch create a pull request with updates from your `name-updates` branch
+
+### Pull Updates
+
+1. 
+
+
 
 ## Credits
 
