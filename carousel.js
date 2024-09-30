@@ -8,7 +8,10 @@ async function fetchPlants() {
         }
 
         const data = await response.json();
-        const plants = data.data ? data.data.slice(0, 9) : []; // Fetch 9 plants for the carousel
+        const plants = data.data || []; // Use all the plants returned by the API
+
+        // Store the plant data in local storage as a JSON string
+        localStorage.setItem('plantsData', JSON.stringify(plants));
 
         const plantsContainer = document.getElementById('plants-container');
         
@@ -24,10 +27,10 @@ async function fetchPlants() {
 
             // Create plant content (name and image)
             plantDiv.innerHTML = `
-                <h1>${plant.common_name || 'Unknown'}</h1>
+                <h1 class="plant-title">${plant.common_name || 'Unknown'}</h1>
                 <img src="${plant.default_image?.regular_url || 'fallback-image-url.jpg'}" alt="${plant.common_name || 'Unknown'}" class="plant-image">
             `;
-
+        
             // Append the new item to the carousel
             plantsContainer.appendChild(plantDiv);
 

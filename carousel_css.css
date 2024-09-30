@@ -1,20 +1,40 @@
+/* Adjust space after <p> */
+.headline p {
+    margin-bottom: 10px; /* Reducing the space below the paragraph */
+}
+
+/* Remove extra margin/padding before the carousel */
+.d-flex {
+    margin-top: -200px; /* You can reduce this to pull the carousel closer */
+}
+
+/* Style for the dynamically created plant h1 */
+.plant-title {
+    font-size: 2rem; /* Adjust size */
+    color: #008000; /* A green color for plant names */
+    margin-bottom: 15px; /* Adjust spacing below the title */
+    text-align: center; /* Center align the text */
+    font-family: 'Montserrat', sans-serif; /* Change font family */
+    font-weight: bold;
+}
+
 /* Style carousel container */
 .carousel {
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
 }
 
 /* Center carousel controls */
 .carousel-control-prev, .carousel-control-next {
     position: absolute;
-    top: 50%;
+    top: 60%;
     transform: translateY(-50%);
-    width: 5%;
+    width: 35%;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #008000;
     border-radius: 50%;
     padding: 10px;
 }
@@ -30,18 +50,13 @@
     height: auto;
     max-height: 400px; /* Adjust the max height of the image */
     object-fit: contain;
-    margin-bottom: 15px;
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
 
 /* Center the carousel container vertically and horizontally */
 .d-flex.justify-content-center.align-items-center {
     min-height: 100vh;
-}
-
-/* Adjust spacing around plant names */
-.carousel-item h1 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
 }
 
 /* Add a slight hover effect on the images */
