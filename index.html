@@ -3,13 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plants Display</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Growing Plants</title>
+    <link rel="stylesheet" href="assets/ css/form.css">
+    <link rel="stylesheet" href="assets/ css/logic.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="./carousel_css.css"/> <!-- Ensure this path is correct -->
 </head>
 <body>
-    <div class="d-flex justify-content-center align-items-center min-vh-100">
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Growing Plants</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Tips</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <div class="headline">
+            <h1>“Grow Your Own Green Haven! 🌱”</h1>
+            <p>Discover the best tips and tricks to grow healthy and vibrant plants right in your home or garden.</p>
+            <p>We've got everything you need to make it happen. <a href="#">Click here</a> or on the image to start your journey!</p>
+        </div>
+        <!-- Image Section -->
+        <div class="image-container">
+            <img src="assets/images/flores1.jpg" alt="Green plants">
+        </div>
+          <div class="d-flex justify-content-center align-items-center min-vh-100">
         <div id="plantCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
             <div class="carousel-inner" id="plants-container">
                 <!-- JavaScript will populate this section -->
@@ -24,9 +49,13 @@
             </a>
         </div>
     </div>
-   
+    </main>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Footer -->
+    <footer>
+        <p>Created by Gabriel, Robbie, and Mitchel</p>
+    </footer>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="carousel.js"></script> 
