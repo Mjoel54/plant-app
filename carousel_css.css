@@ -1,0 +1,51 @@
+/* Style carousel container */
+.carousel {
+    width: 50%;
+    margin: 0 auto;
+}
+
+/* Center carousel controls */
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+/* Styling for carousel items */
+.carousel-item {
+    text-align: center;
+}
+
+/* Styling for plant images */
+.plant-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* Adjust the max height of the image */
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+/* Center the carousel container vertically and horizontally */
+.d-flex.justify-content-center.align-items-center {
+    min-height: 100vh;
+}
+
+/* Adjust spacing around plant names */
+.carousel-item h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Add a slight hover effect on the images */
+.plant-image:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
