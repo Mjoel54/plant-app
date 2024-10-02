@@ -3,7 +3,7 @@ const mainEl = document.getElementsByTagName("main")[0];
 const plantCardListEl = document.getElementById("plantCardList");
 let storedData = retrieveData(`plantData`);
 
-//Fetch Data from the API
+// Fetch Data from the API
 async function fetchPlantData() {
   var requestOptions = {
     method: "GET",
@@ -15,31 +15,26 @@ async function fetchPlantData() {
       requestOptions
     );
 
-    // Log the response to check if it's valid
     console.log("Raw response:", response);
 
-    // Check if the response is OK (status code 200)
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
     const data = await response.json();
-    console.log("Parsed data:", data); // Log the parsed data
+    console.log("Parsed data:", data);
 
-    // Now save the data if it's valid
     storeData(`plantData`, data);
   } catch (error) {
     console.log("Error fetching plant data:", error);
   }
 }
 
-// TODO: Write a storeData function
 function storeData(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
   console.log(`Data stored in localStorage with key ${key}.`);
 }
 
-// TODO: Write a function retrieveData to get Data from local storage
 function retrieveData(key) {
   const data = localStorage.getItem(key);
   if (data) {
@@ -51,7 +46,6 @@ function retrieveData(key) {
   }
 }
 
-// Redirect Page Function
 const redirectPage = (url) => {
   if (url) {
     location.assign(url);
@@ -60,12 +54,10 @@ const redirectPage = (url) => {
   }
 };
 
-// Functioning code
 const renderCardEl = () => {
   let testData = retrieveData("plantData");
   console.log(testData.data[0]);
 
-  // Loop through plant data and create a card for each plant
   for (let i = 0; i < 6; i++) {
     let newElement = document.createElement("div");
     newElement.setAttribute("class", "card col-md-3 col-12 m-4 shadow-sm");
@@ -73,7 +65,6 @@ const renderCardEl = () => {
     newElement.setAttribute("id", `plantID-${testData.data[i].id}`);
 
     if (testData) {
-      // Create the card content
       newElement.innerHTML = `
         <img src="${
           testData.data[i].default_image.medium_url
@@ -98,14 +89,45 @@ const renderCardEl = () => {
             <input type="text" id="growingTipsInput-${
               testData.data[i].id
             }" class="form-control" placeholder="Add gardening tips"/>
-            <div class="justify-content-center"><button id="saveTipsBtn-${
+            <div class="justify-content-center">
+            <button id="saveTipsBtn-${
               testData.data[i].id
             }" class="btn btn-secondary mt-3">Save</button></div>
           </form></div>
         </div>
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal-${testData.data[i].id}"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel-${testData.data[i].id}"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel-${
+                  testData.data[i].id
+                }">
+                  Thank you for providing your plant care tips!
+                </h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+       <img
+              src="./Screenshot 2024-10-01 193713.png"
+              alt="Plant Image"
+              class="img-fluid mb-3"
+            />
+               
+              </div>
+
+            </div>
+          </div>
+        </div>
       `;
 
-      // Append the card to the container
       plantCardListEl.appendChild(newElement);
 
       // Get elements by ID
@@ -116,19 +138,25 @@ const renderCardEl = () => {
       const growingTipsInput = document.getElementById(
         `growingTipsInput-${testData.data[i].id}`
       );
-
       const saveTipsBtn = document.getElementById(
         `saveTipsBtn-${testData.data[i].id}`
       );
 
-      // Add event listener for the "Save Tips" button
-      saveTipsBtn.addEventListener("click", () => {
+      saveTipsBtn.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent the default form submission behavior
+        event.stopPropagation(); // Stop the event from bubbling up
+
         const tips = growingTipsInput.value;
         if (tips) {
-          // Save the tips in localStorage with a uniqe key for each plant
           const plantID = testData.data[i].id;
           storeTips(plantID, tips);
-          alert("Growing tips saved!");
+          // Show the modal
+          const modal = new bootstrap.Modal(
+            document.getElementById(`exampleModal-${plantID}`)
+          );
+          modal.show();
+        } else {
+          alert("Please enter a tip before saving!");
         }
       });
     } else {
