@@ -3,11 +3,16 @@ const blogListEl = document.getElementById("blogListEl");
 console.log(blogListEl);
 
 let growingTipsOne = localStorage.getItem("growingTips-1");
-console.log(growingTipsOne);
+if (growingTipsOne) {
+  console.log(growingTipsOne);
+} else {
+  console.log("No data found");
+}
 
 //Function to display tips from storage
 const addTipsToPage = (key, number) => {
   let data = retrieveData(key);
+  console.log(data);
   let headingData = retrieveData(`plantData`);
   console.log(headingData);
   let ul = document.createElement("ul");
