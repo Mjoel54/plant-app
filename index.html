@@ -1,60 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Growing Plants</title>
-    <link rel="stylesheet" href="assets/ css/form.css">
-    <link rel="stylesheet" href="assets/ css/logic.css">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./carousel_css.css"/> <!-- Ensure this path is correct -->
-</head>
-<body>
+    <link rel="stylesheet" href="assets/ css/form.css" />
+    <link rel="stylesheet" href="assets/ css/logic.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./carousel_css.css" />
+    <!-- Ensure this path is correct -->
+  </head>
+  <body>
     <!-- Navbar -->
     <header>
-        <nav class="navbar">
-            <div class="logo">Growing Plants</div>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Tips</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+      <nav class="navbar">
+        <div class="logo">Growing Plants</div>
+        <ul class="nav-links">
+          <li><a href="./blog.html">Gardening Advice</a></li>
+
+          <li><a href="#plantContainer">Plant List</a></li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Main content -->
     <main>
-        <div class="headline">
-            <h1>“Grow Your Own Green Haven! 🌱”</h1>
-            <p>Discover the best tips and tricks to grow healthy and vibrant plants right in your home or garden.</p>
-            <p>We've got everything you need to make it happen. <b>Click on the image</b> to start your journey!</p>
+      <div class="headline">
+        <h1>“Grow Your Own Green Haven! 🌱”</h1>
+        <p>
+          Discover the best tips and tricks to grow healthy and vibrant plants
+          right in your home or garden.
+        </p>
+        <p>
+          We've got everything you need to make it happen.
+          <b>Click on the image</b> to start your journey!
+        </p>
+      </div>
+
+      <div class="d-flex justify-content-center align-items-center min-vh-100">
+        <div
+          id="plantCarousel"
+          class="carousel slide"
+          data-ride="carousel"
+          data-interval="false"
+        >
+          <div class="carousel-inner" id="plants-container">
+            <!-- JavaScript will populate this section -->
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#plantCarousel"
+            role="button"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#plantCarousel"
+            role="button"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div id="plantContainer">
+          <section
+            id="plantCardList"
+            class="container d-flex flex-wrap justify-content-center py-4 mt-5"
+          ></section>
         </div>
 
-        <div class="d-flex justify-content-center align-items-center min-vh-100">
-            <div id="plantCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
-                <div class="carousel-inner" id="plants-container">
-                    <!-- JavaScript will populate this section -->
-                </div>
-                <a class="carousel-control-prev" href="#plantCarousel" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#plantCarousel" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-        </div>
+        <!-- <section id="blogListEl"></section> -->
+      </div>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>Created by Gabriel, Robbie, and Mitchel</p>
+      <p>Created by Gabriel, Robbie, and Mitchel</p>
     </footer>
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="carousel.js"></script> 
-</body>
+    <script src="carousel.js"></script>
+    <script src="./assets/js/logic.js"></script>
+  </body>
 </html>
