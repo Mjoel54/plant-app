@@ -79,7 +79,7 @@ const renderCardEl = () => {
           testData.data[i].default_image.medium_url
         }" class="card-img-top w-100" alt="${testData.data[i].common_name}" />
 
-        <div class="card-body d-flex flex-column">
+        <div class="card-body">
           <h5 class="card-title text-center">${
             testData.data[i].common_name
           }</h5>
@@ -98,7 +98,7 @@ const renderCardEl = () => {
             <input type="text" id="growingTipsInput-${
               testData.data[i].id
             }" class="form-control" placeholder="Add gardening tips"/>
-            <div class="d-flex justify-content-center"><button id="saveTipsBtn-${
+            <div class="justify-content-center"><button id="saveTipsBtn-${
               testData.data[i].id
             }" class="btn btn-secondary mt-3">Save</button></div>
           </form></div>
