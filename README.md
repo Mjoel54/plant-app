@@ -2,7 +2,9 @@
 
 ## Description
 
-This web application allows users to take care of a virtual plant through a simple, interactive two-page interface. Users can water their plant and are provided with information on their selected plant via an API.
+Growing Plants is a two-page web application that allows plant enthusiasts to share their horticultural knowledge. Information on selected plants is populated via API calls to Perenual.
+
+Through this project we gained experience in using the CSS Framework, Bootstrap in addition to making HTTP requests to retrieve API data. Additionally, we extended our understanding of navigating JSON data.
 
 - [User Story](#userstory)
 - [Installation](#installation)
@@ -11,22 +13,24 @@ This web application allows users to take care of a virtual plant through a simp
 
 ## User Story
 
-AS a user I should be able to select a plant from the landing page
-An API call is triggered, data is retrieved on the selected plant and stored in localStorage. This action redirects to the app page.
+AS a user I should be able to view plant cards containing useful information
+An API call is triggered, data is retrieved on the selected plant and stored in localStorage. A function retrieves this JSON object from localStorage and populates plant cards.
 
-AS a user WHEN I get to the app page I see a header containing game style data
-The selected plant is retrieved from localStorage
+As a user I should be able to click between the Home page and the Gardening Advice forum.
+The header contains links to easily navigate between the two pages.
 
-AS a user WHEN I get to the app page I see my selected plant and watering options
-The selected plant is retrieved from localStorage
+AS a user I can add plant care tips through the plant cards.
+An input element is dynamically loaded on the plant card which takes user input and saves it to localStorage
 
-AS a user WHEN I am on the app I can water the plant
-Logic retrieves data from local storage on selected plant, adds water level, saves new water level to local storage and presents a message to the user.
+As a user when I navigate to the Gardening Advice forum I see the tips I have added.
+Data from localStorage is retrieved an populated as cards using JavaScript and Bootstrap CSS.
 
-AS a user WHEN I am on the app page I am presented with information on my selected plant
-Logic retrieves and displays information on the selected plant from local storage.
+AS a user when I return to the Gardening Advice forum I see tips from previous browser sessions.
+Data persists in localStorage
 
-## Installation
+## Working with this repo
+
+### Installation
 
 1. Clone the repository to your local computer
 
@@ -46,7 +50,7 @@ Logic retrieves and displays information on the selected plant from local storag
    git branch -a
    ```
 
-4. Switch to a branch on your local computer and track a remote branch
+4. If a branch doesn't exist locally but does exist remotely, you can check it out by running:
 
    ```
    git checkout -b <branch-name> origin/<branch-name>
@@ -56,27 +60,36 @@ Logic retrieves and displays information on the selected plant from local storag
 
    WHERE origin/mitch-updates is the remote branch AND mitch-updates is the local branch
 
-5. Git add
+### Push Updates
 
-6. Git commit
+1. Git add
 
-7. Push changes to the correct remote branch
+1. Git commit
+
+1. Push changes to the correct remote branch
+
    ```
    git push origin <branch-name>
    ```
 
-Example: On my local computer I use
-git push origin mitch-updates
-This will push changes to the remote mitch-updates branch
+   Example: On my local computer I use
+   git push origin mitch-updates
+   This will push changes to the remote mitch-updates branch
 
-8. Select the target branch in Github
+1. Select the target branch in Github
    ![alt text](image.png)
 
-9. Create the pull request
+1. Create the pull request
 
-10. In the dev branch create a pull request with updates from the `name-updates` branch
+1. In the dev branch create a pull request with updates from your `name-updates` branch
+
+### Pull Updates
+
+1.
 
 ## Credits
+
+This application was created by Gabriel, Robbie & Mitch
 
 ## License
 
