@@ -1,4 +1,5 @@
 const blogListEl = document.getElementById("blogListEl");
+const homeBtn = document.getElementById("homeBtn");
 
 console.log(blogListEl);
 
@@ -45,3 +46,7 @@ for (let i = 1; i <= 6; i++) {
     addTipsToPage(`growingTips-${i}`, i);
   }
 }
+
+homeBtn.addEventListener("click", () => {
+  redirectPage("index.html");
+});
