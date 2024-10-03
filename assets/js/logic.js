@@ -1,6 +1,7 @@
 const plantAppKey = "sk-JE7J66f392518002d6994";
 const mainEl = document.getElementsByTagName("main")[0];
 const plantCardListEl = document.getElementById("plantCardList");
+const gardeningAdviceBtn = document.getElementById("gardeningAdviceBtn");
 let storedData = retrieveData(`plantData`);
 
 // Fetch Data from the API
@@ -173,4 +174,9 @@ const storeTips = (plantID, tips) => {
   console.log(`Growing tips for plant ${plantID} saved.`);
 };
 
+gardeningAdviceBtn.addEventListener("click", () => {
+  redirectPage("blog.html");
+});
+
+fetchPlantData();
 renderCardEl();
