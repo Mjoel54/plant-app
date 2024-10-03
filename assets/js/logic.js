@@ -1,4 +1,4 @@
-const plantAppKey = "sk-JE7J66f392518002d6994";
+const plantAppKey = "sk-QOMI66fe62d7ed59d7098";
 const mainEl = document.getElementsByTagName("main")[0];
 const plantCardListEl = document.getElementById("plantCardList");
 const gardeningAdviceBtn = document.getElementById("gardeningAdviceBtn");
