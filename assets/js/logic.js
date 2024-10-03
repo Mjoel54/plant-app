@@ -117,7 +117,7 @@ const renderCardEl = () => {
               </div>
               <div class="modal-body">
        <img
-              src="./Screenshot 2024-10-01 193713.png"
+              src="./assets/images/Screenshot 2024-10-01 193713.png"
               alt="Plant Image"
               class="img-fluid mb-3"
             />
